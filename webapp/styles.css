@@ -1,0 +1,39 @@
+html {
+  font-family: monospace;
+  color: #55ff55;
+  background-color: black;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  margin: auto;
+  width: 500px;
+}
+
+#logo {
+  height: 100px;
+  padding: 40px 0 40px 0;
+}
+
+input,
+#logo {
+  width: 100%;
+}
+
+input {
+  font-family: monospace;
+  border-color: linear-gradient(21deg, #10abff, #1beabd);
+  border: 0px;
+  padding: 12px;
+  border-radius: 3px;
+}
+
+#result {
+  text-align: center;
+  padding: 40px 0 40px 0;
+  margin: auto;
+  overflow: scroll;
+}

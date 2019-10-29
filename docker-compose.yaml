@@ -1,0 +1,16 @@
+version: "3.4"
+
+services:
+  lor-api:
+    container_name: lor-api
+    build: 
+      context: ./api
+    ports:
+      - 8080:8080
+
+  lor-webapp:
+    container_name: lor-webapp
+    build:
+      context: ./webapp
+    ports:
+      - 80:80

@@ -31,7 +31,7 @@
         if (valueChanged) {
             proof = $(':input').val();
             $.ajax({
-                url: "%API_ENDPOINT%" + proof
+                url: "%API_ENDPOINT%" + '/' + proof
             }).then(function (data) {
                 $('#result').text(JSON.stringify(data).replace(/,/g, ', ').replace(/:/g, ': '));
             });

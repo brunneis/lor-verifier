@@ -31,7 +31,7 @@
         if (valueChanged) {
             proof = $(':input').val();
             $.ajax({
-                url: "http://localhost:8080" + proof
+                url: "http://localhost:8080" + '/' + proof
             }).then(function (data) {
                 $('#result').text(JSON.stringify(data).replace(/,/g, ', ').replace(/:/g, ': '));
             });

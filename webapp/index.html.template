@@ -14,28 +14,24 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <div class="container">
         <img src="images/graphn.svg" id="logo" class="grid-item" />
-        <div id="input" class="grid-item"><input type="text" placeholder="input your proof..."/></div>
+        <div class="grid-item"><textarea id="input" placeholder="o29f414e23420630b57ca83781dd8c98c8cd8d33e6ac8563b53c3f4da9227133dl3fc893246780c0826922e1acf5ddb874fd65577ec03f930a67a2b7f034e8cd8fr7354af0939..."></textarea></div>
     </div>
     <div id="result" class="grid-item"></div>
 </body>
 
 <script>
-    $(':input').on('propertychange input', function (e) {
-        var valueChanged = false;
-
-        if (e.type == 'propertychange') {
-            valueChanged = e.originalEvent.propertyName == 'value';
-        } else {
-            valueChanged = true;
-        }
-        if (valueChanged) {
-            proof = $(':input').val();
-            $.ajax({
-                url: "%API_ENDPOINT%" + '/' + proof
-            }).then(function (data) {
+    $('textarea#input').on('input onpropertychange', function (e) {
+        proof = $('textarea#input').val();
+        $.ajax({
+            url: "http://localhost:8080" + '/' + proof
+        }).then(function (data) {
+            console.log(data);
+            if (!data) {
+                $('#result').text();
+            } else {
                 $('#result').text(JSON.stringify(data).replace(/,/g, ', ').replace(/:/g, ': '));
-            });
-        }
+            }
+        });
     });
 </script>
 

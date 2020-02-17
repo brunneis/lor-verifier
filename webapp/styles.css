@@ -15,20 +15,21 @@ body {
 
 #logo {
   height: 100px;
+  width: 100%;
   padding: 60px 0 60px 0;
 }
 
-textarea, #logo {
-  width: 100%;
-  height: 100px;
-}
-
-textarea {
+textarea#input {
   font-family: monospace;
   border-color: linear-gradient(21deg, #10abff, #1beabd);
   border: 0px;
   padding: 12px;
   border-radius: 3px;
+}
+
+textarea#input {
+  width: 100%;
+  height: 100px;
 }
 
 #result {
